@@ -1,0 +1,40 @@
+<!DOCTYPE html
+   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title> 이벤트 </title>
+   <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+   <script type="text/javascript">
+      //<![CDATA[
+      $(function () {
+         // $("h1").delegate("a", "mouseOver focus", function() { // <h1> 태그 아래로 <a> 태그가 생기게 되었을대 mouseOver 또는 focus 이벤트가 수행되면 function이 실행된다.
+         //    $(this).css("background-color", "yellow");
+         // });
+         
+
+         $("h1").html("<a href='#'>내용</a>"); // 동적으로 생긴 <a>태그 생성
+         // --> on() 메서드는 이 동적<a>태그에 적용시킬 수 있지만 bind() 메서드는 이 동적<a>태그에 스타일을 적용시킬 수 없다.
+
+         // 위의 코드로 인해 h1태그의 하위태그인 a태그가 만들어졌다. 그 만들어진 a태그에 대한 코드가 바로 아래에 나온다.
+         // $("h1 a").on("click", function() {
+         //    $(this).css("background-color", "lightblue");
+         // });
+
+
+         $("h1 a").bind("click", function() {
+            $(this).css("background-color", "lightblue"); // 왜,, 적용이 되는거지,,,?
+         });
+
+
+      });
+//]]>
+   </script>
+</head>
+
+<body>
+   <h1></h1>
+</body>
+
+</html>

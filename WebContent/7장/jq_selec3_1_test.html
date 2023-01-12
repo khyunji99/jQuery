@@ -1,0 +1,28 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title> 객체 조작 및 생성 </title>
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript">
+        //<![CDATA[
+        $(function () {
+            $("h2").html("<a href='#'>HTML 메서드</a>");
+            // <h2><em>html()</em></h2> 의 html() 라는 내용을 HTML 메서드 라는 내용으로 바꾸는 코드
+            alert($("h1").html());
+            // .html() 의미는 태그를 포함한 <strong>객체 조작 및 생성</strong> 를 출력하게 한다.
+            alert($("h1").text());
+            // .text() 의미는 태그를 포함하지 않은 객체 조작 및 생성> 를 출력하게 한다.
+        });
+//]]>
+    </script>
+</head>
+
+<body>
+    <h1><strong>객체 조작 및 생성</strong></h1>
+    <h2><em>html()</em></h2>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title> 선택자 </title>
+<!-- <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script> -->
+<!-- <script src=""http://code.jquery.com/jquery-latest.js"></script> -- (CDN) 네트워크 전송 방식 -->
+<!-- "js/jquery-1.10.2.min.js" 에서 min 의 의미는 줄바꿈이 안되어있음을 의미한다. -->
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function(){ // document가 준비되면 익명함수 function(이벤트함수)을 실행한다.
+   document.querySelector("h1").style.color = "green"; // javascript
+});
+// 이벤트와 이벤트 헨들러로 구성된 코드이다,,?
+// 자바스크립에서 코드를 적으려면 이와 같이 이벤트 형식으로 코드를 적어줘야한다.
+// 하지만 제이쿼리에서는 더 간결하게 코드를 적을 수 있다.
+
+
+$(function(){
+   //$("h1").css("color", "green"); // jquery
+});
+
+/*
+$(document).ready(); // 자바스크립트 형식
+$(function(){
+   실행문
+}); // 제이쿼리 형식
+*/
+
+//]]>
+</script>
+ </head>
+<body>
+   <h1>제이쿼리</h1>
+</body>
+</html>

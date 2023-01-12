@@ -1,0 +1,35 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title> 객체 조작 및 생성 </title>
+  <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript">
+    //<![CDATA[
+    $(function () {
+      $("#txt").text($("#wrap img").attr("src"));
+      // id=wrap인 요소에서 src 값을 가져와서 id=txt 부분인 곳에 그 값을 넣어라(alert).
+      $("#wrap img").attr("width", "200");
+      // id=wrap 속성인 img 태그에 너비 width를 200으로 바꿔라.
+      $("#box img").removeAttr("border");
+      // id=box 속성인 img 태그에서 border 속성을 없애라. 
+
+    });
+//]]>
+  </script>
+</head>
+
+<body>
+  <h1>객체 조작 및 생성</h1>
+  <p id="wrap">
+    <img src="images/math_img_1.jpg" alt="가위" width="100" />
+  </p>
+  <p id="txt"></p>
+  <p id="box">
+    <img src="images/math_img_3.jpg" alt="보" width="100" border="2" />
+  </p>
+</body>
+
+</html>
