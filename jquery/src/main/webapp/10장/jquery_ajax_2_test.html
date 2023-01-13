@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>Ajax</title>
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+	//<![CDATA[
+	$(function() {
+		// 자바스크립으로 표현한 코드
+		$("#member").on("submit", function() {
+			var d = $(this).serialize();
+			// 폼 요소를 serialize(데이터를 일렬로 나열하는 것) 한다.
+			// 예) username=hongildong&passwd=hong
+			alert(d); // "username=hongildong&passwd=hong"
+			
+			$.ajax({ //* 서버로 보내줄 내용들을 코드로 작성한 것 *//
+				url : "welcome.jsp", // 전송할 URL 주소 
+				type : "post",       // 전송하는 방식
+				data : d,            // 전송할 데이터
+				success : function(result) {
+					$("#txt1").html(result); // 받은 값이 result변수에 들어가고 그 값을 id=txt1요소인 곳에 값을 넣어라.
+					
+				}
+			});
+			
+			return false;  // form action 페이지로 이동하는 것을 차단한다.
+		});
+
+
+	});
+	//]]>
+</script>
+</head>
+<body>
+	<form action="member.jsp" method="get" name="member" id="member">
+		<fieldset>
+			<legend>회원가입</legend>
+			<p>
+				<label for="username">이름</label> <input type="text" name="username"
+					id="username" />
+			</p>
+			<p>
+				<label for="passwd">비밀번호</label> <input type="password"
+					name="passwd" id="passwd" />
+			</p>
+			<p>
+				<input type="submit" value="확인" />
+			</p>
+		</fieldset>
+	</form>
+	<h1 id="txt1"></h1>
+</body>
+</html>

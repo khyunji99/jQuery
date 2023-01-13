@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>Ajax</title>
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+	//<![CDATA[
+	$(function() {
+		$.ajax({
+			url: "rank.xml",
+			//data: ... <-- 내가 받는 데이터 타입
+			dataType: "xml",   // 요청할 데이터의 타입
+			success: function(result) {
+				if($(result).find("rank").length > 0) {
+					$(result).find("rank").each(function(){
+						var name = $(this).find("k").text(); // 맨처음 name 변수에 '김연아'가 들어간다. 그 다음 순서로는 '이상화', 그 다음으로는 '모태범' 이 name 변수에 들어간다.
+						var result = "<li>" + name + "</li>";
+						
+						$("#wrap ol").append(result);
+						// id = wrap요소인 ol 태그에 result 값들을 붙여라.
+					});
+				}
+			}
+		});
+
+	});
+	//]]>
+</script>
+</head>
+<body>
+	<h1>인기 검색어</h1>
+	<div id="wrap">
+		<ol></ol>
+	</div>
+</body>
+</html>
